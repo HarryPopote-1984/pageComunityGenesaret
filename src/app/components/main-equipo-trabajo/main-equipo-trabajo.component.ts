@@ -1,7 +1,6 @@
 import { Component, ViewEncapsulation, OnInit, AfterViewInit, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { register, SwiperContainer } from 'swiper/element/bundle';
-
+import { register } from 'swiper/element/bundle';
 
 register();
 
@@ -9,6 +8,7 @@ interface TeamMember {
   name: string;
   position: string;
   image: string;
+  description?: string; // Added description field
 }
 
 @Component({
@@ -20,89 +20,98 @@ interface TeamMember {
   styleUrls: ['./main-equipo-trabajo.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class MainEquipoTrabajoComponent implements OnInit {
-  @ViewChild('swiperContainer', { read: ElementRef })
-  swiperContainerRef!: ElementRef;  // ← aquí se define
+export class MainEquipoTrabajoComponent implements OnInit, AfterViewInit {
 
-
-  // @ViewChild('swiperContainer') swiperContainerRef!: ElementRef<SwiperContainer>; // Referencia al elemento
+  @ViewChild('swiperEl') swiperContainerRef!: ElementRef;
 
   teamMembers: TeamMember[] = [
     {
       name: 'Miembro 1',
       position: 'Posición 1',
-      image: 'assets/images/equipo_de_trabajo/imagen1.PNG'
+      image: 'assets/images/equipo_de_trabajo/imagen1.PNG',
+      description: 'Morbi in libero blandit lectus cursus'
     },
     {
       name: 'Miembro 2',
       position: 'Posición 2',
-      image: 'assets/images/equipo_de_trabajo/imagen2.PNG'
+      image: 'assets/images/equipo_de_trabajo/imagen2.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 3',
-      position: 'Posición 3',
-      image: 'assets/images/equipo_de_trabajo/imagen3.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen3.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 4',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen4.PNG',
+      description: 'Curabitur molestie dignissim purus'
+    },
+    {
+      name: 'Miembro 4',
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen5.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 5',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen6.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 6',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen7.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 7',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen8.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 8',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen9.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 9',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
-    },
-    {
-      name: 'Miembro 9',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
-    },
-    {
-      name: 'Miembro 10',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen10.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 11',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen11.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 12',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen12.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 13',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen13.PNG',
+      description: 'Curabitur molestie dignissim purus'
     },
     {
       name: 'Miembro 14',
-      position: 'Posición 4',
-      image: 'assets/images/equipo_de_trabajo/imagen4.PNG'
+      position: 'Posición 2',
+      image: 'assets/images/equipo_de_trabajo/imagen14.PNG',
+      description: 'Curabitur molestie dignissim purus'
     }
+
+    // Add descriptions to all your team members
+    // ...rest of team members
   ];
 
   ngOnInit() {
@@ -110,61 +119,48 @@ export class MainEquipoTrabajoComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    const swiperEl = this.swiperContainerRef.nativeElement as any;
-    Object.assign(swiperEl, {
-      breakpoints: {
-        320:  { slidesPerView: 1, spaceBetween: 20 },
-        768:  { slidesPerView: 2, spaceBetween: 20 },
-        1024: { slidesPerView: 3, spaceBetween: 25 },
-        1280: { slidesPerView: 4, spaceBetween: 30 },
-      },
-      autoplay: { delay: 3000, disableOnInteraction: false },
-    });
-    swiperEl.initialize();
+    setTimeout(() => {
+      const swiperEl = this.swiperContainerRef.nativeElement;
+
+      // Configuración del Swiper
+      const swiperParams = {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          clickable: true,
+          el: '.swiper-pagination'
+        },
+        navigation: false, // Desactivar los botones de navegación
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20
+          },
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 20
+          }
+        }
+      };
+
+      // Asignar los parámetros al elemento Swiper
+      Object.assign(swiperEl, swiperParams);
+
+      // Inicializar Swiper
+      swiperEl.initialize();
+    }, 100);
   }
-
-  // ngAfterViewInit() {
-  //   setTimeout(() => {
-  //     const swiperEl = document.querySelector('swiper-container');
-  //     if (swiperEl) {
-  //       const swiperParams = {
-  //         slidesPerView: 4,
-  //         spaceBetween: 30,
-  //         loop: true,
-  //         effect: 'slide',
-  //         autoplay: {
-  //           delay: 3000,
-  //           disableOnInteraction: false,
-  //           pauseOnMouseEnter: true,
-  //           enabled: true
-  //         },
-  //         navigation: {
-  //           enabled: true
-  //         },
-  //         breakpoints: {
-  //           320: {
-  //             slidesPerView: 1,
-  //             spaceBetween: 20
-  //           },
-  //           768: {
-  //             slidesPerView: 2,
-  //             spaceBetween: 20
-  //           },
-  //           1024: {
-  //             slidesPerView: 3,
-  //             spaceBetween: 25
-  //           },
-  //           1280: {
-  //             slidesPerView: 4,
-  //             spaceBetween: 30
-  //           }
-  //         }
-  //       };
-
-  //       Object.assign(swiperEl, swiperParams);
-  //       // @ts-ignore
-  //       swiperEl.initialize();
-  //     }
-  //   }, 0);
-  // }
 }

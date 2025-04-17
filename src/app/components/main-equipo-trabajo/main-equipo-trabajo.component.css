@@ -1,107 +1,87 @@
 /* src/app/main-equipo-trabajo/main-equipo-trabajo.component.css */
-/* 1. Importa todo el CSS de Swiper (core + navigation + pagination) */
 @import "swiper/swiper-bundle.css";
 
 :host {
   display: block;
   margin: 30px 0;
-}
-
-/* 2. Tu wrapper */
-.services-container {
+  background-color: #1a1d23;
+  color: #fff;
   padding: 20px 0;
 }
 
-/* 3. El swiper, con clase propia */
-.my-swiper {
-  width: 100%;
-  height: 400px;         /* Altura fija para que no colapse */
+.services-container {
+  padding: 20px 0;
   position: relative;
+}
+
+.team-swiper {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  padding-bottom: 40px; /* Espacio para los puntos de paginación */
+}
+
+/* Estilo para las tarjetas del equipo */
+.team-card {
+  background-color: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  margin: 0 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.team-image {
+  width: 100%;
+  height: 300px;
   overflow: hidden;
 }
 
-/* 4. Tu ítem */
-.item {
-  background-image: url(/assets/images/service-item-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 20px;
-  text-align: center;
-  color: #fff;
-  padding: 40px;
+.team-image img {
   width: 100%;
   height: 100%;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
 }
 
-.item .icon {
-  max-width: 60px;
-  margin-bottom: 15px;
+.team-info {
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  color: #333;
 }
 
-.item h4 {
-  margin: 25px 0 15px;
-  font-size: 18px;
-  font-weight: 600;
+.team-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
 }
 
-.item p {
-  font-size: 13px;
-}
-
-/* 5. Overwrites de navegación y paginación */
+/* Ocultar los botones de navegación */
 :host ::ng-deep .swiper-button-prev,
 :host ::ng-deep .swiper-button-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px !important;
-  height: 40px !important;
-  background: rgba(245, 164, 37, 0.8) !important;
-  border-radius: 50% !important;
-  color: #fff !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  pointer-events: auto;
-  transition: background 0.3s ease;
+  display: none !important;
 }
 
-:host ::ng-deep .swiper-button-prev {
-  left: 10px;
-}
-
-:host ::ng-deep .swiper-button-next {
-  right: 10px;
-}
-
-:host ::ng-deep .swiper-button-prev:hover,
-:host ::ng-deep .swiper-button-next:hover {
-  background: rgba(245, 164, 37, 1) !important;
-}
-
+/* Estilo de paginación */
 :host ::ng-deep .swiper-pagination {
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   width: 100%;
   text-align: center;
 }
 
 :host ::ng-deep .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: #ccc;
-  opacity: 0.5;
-  margin: 0 4px !important;
-  transition: opacity 0.3s ease;
+  width: 8px;
+  height: 8px;
+  background: #ddd;
+  opacity: 1;
+  margin: 0 5px !important;
 }
 
 :host ::ng-deep .swiper-pagination-bullet-active {
-  background: #f5a425;
+  background: #2b73ff;
   opacity: 1;
 }
