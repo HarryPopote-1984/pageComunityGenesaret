@@ -1,0 +1,157 @@
+:host ::ng-deep .accordion {
+  margin-bottom: 30px;
+}
+
+:host ::ng-deep ngb-accordion {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  display: block;
+  width: 100%;
+}
+
+:host ::ng-deep .accordion-button {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f272b;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:host ::ng-deep .accordion-button:not(.collapsed) {
+  color: #f5a425;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+:host ::ng-deep .accordion-button::after {
+  display: none;
+}
+
+:host ::ng-deep .fa-chevron-right {
+  position: absolute;
+  right: 20px;
+  transition: transform 0.3s ease;
+  font-size: 14px;
+}
+
+:host ::ng-deep .accordion-button:not(.collapsed) .fa-chevron-right {
+  transform: rotate(90deg);
+}
+
+:host ::ng-deep .accordion-body {
+  padding: 20px;
+  padding-top: 0;
+  color: #1f272b;
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+:host ::ng-deep .accordion-item {
+  border: none;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+:host ::ng-deep .accordion-item:last-child {
+  border-bottom: none;
+}
+
+:host ::ng-deep .accordion-collapse {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+:host ::ng-deep p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  color: #2a2a2a;
+  font-size: 14px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.accordions {
+  border-radius: 20px;
+  padding: 40px;
+  background-color: #fff;
+  margin-left: 0;  /* Quitamos el margen izquierdo */
+}
+
+.item {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.item h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  line-height: 1.3;
+  padding: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.mission-wrapper {
+   /* Igualamos el padding al del acordeón */
+}
+
+.mission-item {
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.mission-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Asegurarnos que el contenedor principal tenga un fondo adecuado */
+.col-lg-6.align-self-center {
+  padding: 0;  /* Quitamos el padding extra */
+  position: relative;
+  background: transparent;
+}
+
+/* Eliminamos el overlay anterior y ajustamos la transparencia directamente en los items */
+.col-lg-6.align-self-center::before {
+  display: none;
+}
+
+.col-lg-12 {
+  margin-bottom: 20px;  /* Espaciado consistente entre cajas */
+}
+
+.col-lg-12:last-child {
+  margin-bottom: 0;  /* Eliminamos el margen del último elemento */
+}
+
+/* Aseguramos que las columnas tengan el mismo ancho */
+.col-lg-6 {
+  padding: 0 15px;  /* Padding consistente en ambas columnas */
+}
+
+
+
