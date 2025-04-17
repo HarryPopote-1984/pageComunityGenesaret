@@ -21,16 +21,21 @@
   padding-bottom: 40px; /* Espacio para los puntos de paginación */
 }
 
-/* Estilo para las tarjetas del equipo */
+/* Estilo para las tarjetas del equipo con bordes redondeados */
 .team-card {
   background-color: #fff;
-  border-radius: 0;
+  border-radius: 12px; /* Bordes redondeados para las tarjetas */
   overflow: hidden;
   margin: 0 10px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
 }
 
 .team-image {
@@ -50,6 +55,8 @@
   background: #fff;
   text-align: center;
   color: #333;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .team-info h4 {
@@ -59,10 +66,37 @@
   line-height: 1.4;
 }
 
-/* Ocultar los botones de navegación */
+/* Estilo para las flechas de navegación azules */
 :host ::ng-deep .swiper-button-prev,
 :host ::ng-deep .swiper-button-next {
-  display: none !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #2b73ff !important; /* Color azul para las flechas */
+  color: white !important;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(43, 115, 255, 0.3);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .swiper-button-prev:hover,
+:host ::ng-deep .swiper-button-next:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+:host ::ng-deep .swiper-button-prev:after,
+:host ::ng-deep .swiper-button-next:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+:host ::ng-deep .swiper-button-prev {
+  left: 10px;
+}
+
+:host ::ng-deep .swiper-button-next {
+  right: 10px;
 }
 
 /* Estilo de paginación */
@@ -79,9 +113,12 @@
   background: #ddd;
   opacity: 1;
   margin: 0 5px !important;
+  transition: all 0.3s ease;
 }
 
 :host ::ng-deep .swiper-pagination-bullet-active {
-  background: #2b73ff;
+  background: #2b73ff; /* Color azul para el bullet activo */
   opacity: 1;
+  width: 10px;
+  height: 10px;
 }

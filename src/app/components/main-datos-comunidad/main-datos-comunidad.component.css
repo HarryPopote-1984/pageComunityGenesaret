@@ -1,0 +1,25 @@
+.count-area-content {
+  text-align: center;
+  padding: 25px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+.count-digit {
+  font-size: 48px;
+  font-weight: 700;
+  color: #f48840;
+  margin-bottom: 10px;
+}
+.count-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e1e1e;
+}
+.percentage {
+  background-color: #f7f7f7;
+}
+.new-students {
+  background-color: #f7f7f7;
+}

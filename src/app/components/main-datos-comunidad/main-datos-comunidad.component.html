@@ -1,0 +1,71 @@
+<div class="row">
+
+  <div class="col-lg-12 mb-4 ">
+    <div class="section-heading">
+      <h3 class="text-white">ALGUNOS DATOS SOBRE NUESTRA COMUNIDAD</h3>
+    </div>
+  </div>
+
+
+
+  <div class="col-lg-6 mt-4">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-12">
+            <div class="count-area-content percentage">
+              <div #contadorElement class="count-digit">{{ contadores[0].valorActual }}</div>
+              <div class="count-title">{{ contadores[0].titulo }}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="count-area-content">
+              <div #contadorElement class="count-digit">{{ contadores[1].valorActual }}</div>
+              <div class="count-title">{{ contadores[1].titulo }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-12">
+            <div class="count-area-content new-students">
+              <div #contadorElement class="count-digit">{{ contadores[2].valorActual }}</div>
+              <div class="count-title">{{ contadores[2].titulo }}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="count-area-content">
+              <div #contadorElement class="count-digit">{{ contadores[3].valorActual }}</div>
+              <div class="count-title">{{ contadores[3].titulo }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 align-self-center">
+
+    <!-- Imagen que actúa como un botón para abrir el modal -->
+    <div class="video">
+      <a href="#" onclick="openModal(event)">
+        <img src="assets/images/play-icon.png" alt="Reproducir video">
+      </a>
+    </div>
+
+    <!-- Modal con el video -->
+    <div id="videoModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <!-- Botón de cierre -->
+        <!-- <a (onclick)="closeModal()" class="close">&times;</a> -->
+        <video id="videoPlayer" width="100%" controls>
+          <source src="assets\images\videos\promo-David-Hormachea.mp4" type="video/mp4">
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+    </div>
+
+
+  </div>
+</div>

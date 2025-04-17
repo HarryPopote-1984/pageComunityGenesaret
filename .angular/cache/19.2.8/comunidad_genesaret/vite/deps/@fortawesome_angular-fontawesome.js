@@ -1,9 +1,9 @@
 import {
   DomSanitizer
-} from "./chunk-LQAVBDPY.js";
+} from "./chunk-EVDKOIRP.js";
 import {
   DOCUMENT
-} from "./chunk-U6ME7BSN.js";
+} from "./chunk-3XSLVKL6.js";
 import {
   Component,
   Directive,
@@ -31,7 +31,8 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵsanitizeHtml
-} from "./chunk-Q7JESUB3.js";
+} from "./chunk-37X2M66T.js";
+import "./chunk-HM5YLMWO.js";
 import "./chunk-WDMUDEB6.js";
 
 // node_modules/@fortawesome/fontawesome-svg-core/index.mjs

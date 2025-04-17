@@ -135,7 +135,10 @@ export class MainEquipoTrabajoComponent implements OnInit, AfterViewInit {
           clickable: true,
           el: '.swiper-pagination'
         },
-        navigation: false, // Desactivar los botones de navegación
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
         breakpoints: {
           320: {
             slidesPerView: 1,
